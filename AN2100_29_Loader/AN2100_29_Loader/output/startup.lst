@@ -1,0 +1,151 @@
+
+
+HI-TECH Software Macro Assembler (PSoC MCU) V9.61PL6
+                                                                                                           Tue Jul 26 13:05:35 2011
+
+
+     1                          
+     2                          	; HI-TECH C COMPILER (Cypress PSOC) V9.61PL6
+     3                          	; Copyright (C) 1984-2009 HI-TECH Software
+     4                          	;Serial no. HCPSOC-810066372
+     5                          	;Licensed for FAE use only - not for an end-user.
+     6                          
+     7                          	; Auto-generated runtime startup code for final link stage.
+     8                          
+     9                          	;
+    10                          	; Compiler options:
+    11                          	;
+    12                          	; --asmlist --errformat --chip=CY8C29466 --WARN=0 --OPT=asm,9 \
+    13                          	; -L-ACODE=0000h-71ffh -L-AROM=0000h-71ffh -L-PBootCheckSum=7200h \
+    14                          	; -L-PBootLoaderArea=7400h -OAN2100_29_Loader \
+    15                          	; -Moutput/AN2100_29_Loader.mp --OUTDIR=./output ./obj/boot.obj \
+    16                          	; ./obj/bootloader.p1 ./obj/bootloaderconfig.obj ./obj/flashapi.obj \
+    17                          	; ./obj/main.p1 lib/libpsoc.lib lib/libpsoc.lpp \
+    18                          	; C:/PROGRA~1/Cypress/PSOCDE~1/5.1/Common/CY110F~1/tools/lib/CY8C29000/cms.lib
+    19                          	;
+    20                          
+    21                          
+    22                          	processor	CY8C29466
+    23                          	macro	M8C_ClearWDT
+    24                          	mov reg[0xE3],0x38
+    25  0115                    	endm
+    26                          
+    27                          	psect	PD_startup,class=CODE
+    28                          	psect	init,class=CODE
+    29                          	psect	end_init,class=CODE
+    30                          	psect	powerup,class=CODE
+    31                          	psect	vectors,ovrld,class=CODE
+    32                          	psect	text,class=CODE
+    33                          	psect	maintext,class=CODE
+    34                          	psect	intrtext,class=CODE
+    35                          	psect	bss,class=RAM,space=1
+    36                          	psect	InterruptRAM,class=RAM,space=1
+    37                          	psect	cdata,class=ROM,space=0,reloc=256
+    38                          	psect	psoc_config,class=ROM
+    39                          	psect	UserModules,class=ROM
+    40                          	psect	strings,class=ROM
+    41                          	psect	fnauto,class=RAM,space=1,limit=0100h
+    42                          	psect	SSCParmBlk,abs,ovrld,class=RAM,space=1
+    43  00F8                    	org	0xF8
+    44  00F8                    	blk	8
+    45                          
+    46                          	psect	stackps,class=RAM
+    47                          	global	__Lstackps, __stack_start__
+    48  0700                    __stack_start__:
+    49                          	psect	bss0,class=RAM,space=1
+    50                          	psect	nvram0,class=RAM,space=1
+    51                          	psect	rbit0,bit,class=RAM,space=1
+    52                          	psect	nvbit0,bit,class=RAM,space=1
+    53                          	psect	ramdata0,class=RAM,space=1
+    54                          	psect	romdata0,class=BANKROM,space=0
+    55                          	psect	bss1,class=RAM,space=1
+    56                          	psect	nvram1,class=RAM,space=1
+    57                          	psect	rbit1,bit,class=RAM,space=1
+    58                          	psect	nvbit1,bit,class=RAM,space=1
+    59                          	psect	ramdata1,class=RAM,space=1
+    60                          	psect	romdata1,class=BANKROM,space=0
+    61                          	psect	bss2,class=RAM,space=1
+    62                          	psect	nvram2,class=RAM,space=1
+    63                          	psect	rbit2,bit,class=RAM,space=1
+    64                          	psect	nvbit2,bit,class=RAM,space=1
+    65                          	psect	ramdata2,class=RAM,space=1
+    66                          	psect	romdata2,class=BANKROM,space=0
+    67                          	psect	bss3,class=RAM,space=1
+    68                          	psect	nvram3,class=RAM,space=1
+    69                          	psect	rbit3,bit,class=RAM,space=1
+    70                          	psect	nvbit3,bit,class=RAM,space=1
+    71                          	psect	ramdata3,class=RAM,space=1
+    72                          	psect	romdata3,class=BANKROM,space=0
+    73                          	psect	bss4,class=RAM,space=1
+    74                          	psect	nvram4,class=RAM,space=1
+    75                          	psect	rbit4,bit,class=RAM,space=1
+    76                          	psect	nvbit4,bit,class=RAM,space=1
+    77                          	psect	ramdata4,class=RAM,space=1
+    78                          	psect	romdata4,class=BANKROM,space=0
+    79                          	psect	bss5,class=RAM,space=1
+    80                          	psect	nvram5,class=RAM,space=1
+    81                          	psect	rbit5,bit,class=RAM,space=1
+    82                          	psect	nvbit5,bit,class=RAM,space=1
+    83                          	psect	ramdata5,class=RAM,space=1
+    84                          	psect	romdata5,class=BANKROM,space=0
+    85                          	psect	bss6,class=RAM,space=1
+    86                          	psect	nvram6,class=RAM,space=1
+    87                          	psect	rbit6,bit,class=RAM,space=1
+    88                          	psect	nvbit6,bit,class=RAM,space=1
+    89                          	psect	ramdata6,class=RAM,space=1
+    90                          	psect	romdata6,class=BANKROM,space=0
+    91                          	psect	bss7,class=RAM,space=1
+    92                          	psect	nvram7,class=RAM,space=1
+    93                          	psect	rbit7,bit,class=RAM,space=1
+    94                          	psect	nvbit7,bit,class=RAM,space=1
+    95                          	psect	ramdata7,class=RAM,space=1
+    96                          	psect	romdata7,class=BANKROM,space=0
+    97                          
+    98                          	global	start,startup,_main
+    99                          	global	reset_vec,intlevel0,intlevel1,intlevel2
+   100  0115                    intlevel0:
+   101  0115                    intlevel1:
+   102  0115                    intlevel2:		; for C funcs called from assembler
+   103                          
+   104                          	fnconf	fnauto,??,?
+   105                          	fnroot	_main
+   106  006C                    TMP_DR0	equ	108
+   107  006D                    TMP_DR1	equ	109
+   108  006E                    TMP_DR2	equ	110
+   109  006F                    TMP_DR3	equ	111
+   110  00D0                    CUR_PP	equ	208
+   111  00D1                    STK_PP	equ	209
+   112  00D3                    IDX_PP	equ	211
+   113  00D4                    MVR_PP	equ	212
+   114  00D5                    MVW_PP	equ	213
+   115  00F7                    CPU_F	equ	247
+   116                          	psect	vectors
+   117  0112                    reset_vec:
+   118  0112                    start:
+   119  0112  7D 71E8           	ljmp	startup
+   120                          
+   121                          	psect	init
+   122  71E8                    startup:
+   124  71EB  71 80             	or	f, 0x80	;select multiple RAM page mode
+   125  71ED  70 BF             	and	f, 0xBF
+   126                          
+   127                          ;	Clear uninitialized variables in bank 0
+   128                          	global	__Lbss0
+   129  71EF  50 00             	mov	a,low __Lbss0
+   130  71F1  4E                	swap	a,sp
+   131  71F2  50 00             	mov	a,0
+   132  71F4  08                	push	a
+   133  71F5  08                	push	a
+   134  71F6  08                	push	a
+   135  71F7  62 D1 07          	mov	reg[STK_PP],7
+   136  71FA  50 00             	mov	a,low __Lstackps
+   137  71FC  4E                	swap	a,sp
+   138                          
+   139  71FD  7D 71A3           	ljmp	_main
+
+
+HI-TECH Software Macro Assembler (PSoC MCU) V9.61PL6
+Symbol Table                                                                                               Tue Jul 26 13:05:35 2011
+
+     __Lstackps 0700            _main 71A3            start 0112           STK_PP 00D1        intlevel0 0115        intlevel1 0115  
+      intlevel2 0115        reset_vec 0112          __Lbss0 0000          startup 71E8  __stack_start__ 0700  

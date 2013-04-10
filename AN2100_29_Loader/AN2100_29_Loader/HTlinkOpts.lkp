@@ -1,0 +1,4 @@
+-L-ACODE=0000h-71ffh
+-L-AROM=0000h-71ffh
+-L-PBootCheckSum=7200h
+-L-PBootLoaderArea=7400h

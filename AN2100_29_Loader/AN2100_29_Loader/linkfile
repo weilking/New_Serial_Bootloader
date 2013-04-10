@@ -1,0 +1,8 @@
+-F0x30 -g -blit:0x220.0x7fff 
+ -bdata:0.0x6ff -rwh:SSCParmBlk:0x00F7.0x00FF -BInterruptRAM:0 -Bvirtual_registers  
+ -BAN2100_29_Loader_RAM 
+-bBootCheckSum:0x7200.0x73ff
+-bBootLoaderArea:0x7400.0x7fff
+ -o"output/AN2100_29_Loader" 
+obj/bootloader.o obj/bootloaderconfig.o obj/flashapi.o obj/main.o 	
+ ./lib/libPSoc.a -LE:/PROGRA~1/Cypress/PSOCDE~2/5.3/Common/CY110F~1/tools/lib/LMM/eightpages E:/PROGRA~1/Cypress/PSOCDE~2/5.3/Common/CY110F~1/tools/lib/CY8C29000/cms.a E:/PROGRA~1/Cypress/PSOCDE~2/5.3/Common/CY110F~1/tools/lib/LMM/UASW/MAC/arith.a  
